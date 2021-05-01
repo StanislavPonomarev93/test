@@ -28,7 +28,14 @@
       margin-top: 0;
     }
   </style>
-  <script src="./js/script.js"></script>
+  <script>
+    document.getElementById('title').innerHTML =
+      `Width: ${document.getElementById('container').offsetWidth}, Height: ${document.getElementById('container').offsetHeight}`;
+    document.getElementById('input').addEventListener('focus', function () {
+      document.getElementById('title').innerHTML =
+        `Width: ${document.getElementById('container').offsetWidth}, Height: ${document.getElementById('container').offsetHeight}`;
+    });
+  </script>
 </body>
 
 </html>
