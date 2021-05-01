@@ -10,7 +10,7 @@
 
 <body>
   <div id="container">
-    <h3 id="title"></h3>
+    <h3 id="title">Текст</h3>
     <input type="text" id="input">
   </div>
   <style>
@@ -24,18 +24,20 @@
       background: brown;
     }
 
-    #title {
-      margin-top: 0;
+    @media screen and (orientation:portrait) {
+      #title {
+        margin-top: 0;
+        color: #000;
+      }
+    }
+
+    @media screen and (orientation:landscape) {
+      #title {
+        margin-top: 0;
+        color: #fff;
+      }
     }
   </style>
-  <script>
-    document.getElementById('title').innerHTML =
-      `Width: ${document.getElementById('container').offsetWidth}, Height: ${document.getElementById('container').offsetHeight}`;
-    document.getElementById('input').addEventListener('focus', function () {
-      document.getElementById('title').innerHTML =
-        `Width: ${document.getElementById('container').offsetWidth}, Height: ${document.getElementById('container').offsetHeight}`;
-    });
-  </script>
 </body>
 
 </html>
